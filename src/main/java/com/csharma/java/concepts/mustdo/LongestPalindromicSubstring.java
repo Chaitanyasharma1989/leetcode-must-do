@@ -3,7 +3,7 @@ package com.csharma.java.concepts.mustdo;
 public class LongestPalindromicSubstring {
 
     public String longestPalindrome(String s) {
-       if(s == null || s.length() < 1){
+       if(s == null || s.isEmpty()){
            return "";
        }
 
@@ -12,9 +12,6 @@ public class LongestPalindromicSubstring {
         for (int i=0; i < s.length() ; i ++){
             int odd = expandFromCenter(s,i,i);
             int even = expandFromCenter(s,i,i +1);
-
-            int length =  Math.max(odd,even);
-
        }
 
 
