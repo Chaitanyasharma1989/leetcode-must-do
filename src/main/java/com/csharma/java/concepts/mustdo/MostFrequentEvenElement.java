@@ -33,7 +33,7 @@ public class MostFrequentEvenElement {
 
             return mostFrequent;
         }
-
+        return -1;
     }
 
 
