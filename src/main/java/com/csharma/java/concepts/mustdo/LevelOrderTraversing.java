@@ -1,6 +1,6 @@
 package com.csharma.java.concepts.mustdo;
 
-import jdk.internal.ref.CleanerFactory;
+import com.csharma.java.concepts.common.TreeNode;
 
 import java.util.*;
 
@@ -31,29 +31,6 @@ public class LevelOrderTraversing {
             answer.add(levelMapping);
         }
         return answer;
-    }
-
-    public static void main(String[] args) {
-
-    }
-}
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode() {
-    }
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
     }
 }
 
