@@ -11,22 +11,26 @@ public class LevelOrderTraversing {
             return Collections.emptyList();
         }
 
+        List<List<Integer>> answer = new ArrayList<>();
         Queue<TreeNode> queue = new ArrayDeque<>();
-
         queue.add(root);
 
         while (!queue.isEmpty()) {
-            TreeNode treeNode = queue.poll();
+            List<Integer> levelMapping = new ArrayList<>();
+            for (int i = 0; i < queue.size(); ++i) {
+                TreeNode treeNode = queue.poll();
+                levelMapping.add(treeNode.val);
+                if (treeNode.left != null) {
+                    queue.add(treeNode.left);
+                }
 
-            if (treeNode.left != null) {
-                queue.add(treeNode.left);
+                if (treeNode.right != null) {
+                    queue.add(treeNode.right);
+                }
             }
-
-            if (treeNode.right != null) {
-                queue.add(treeNode.right);
-            }
+            answer.add(levelMapping);
         }
-
+        return answer;
     }
 
     public static void main(String[] args) {
