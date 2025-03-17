@@ -39,22 +39,22 @@ public class LongestConsecutiveSequence {
             return 0;
         }
         final HashSet numHashSet = new HashSet();
+
         Arrays.stream(nums).forEach(value -> numHashSet.add(value));
 
         int maxCount = 0;
 
-        for (int inte: nums) {
-            if(!numHashSet.contains(inte - 1)){
+        for (int inte : nums) {
+            if (!numHashSet.contains(inte - 1)) {
                 int currentNumber = inte;
-int currentCount = 1;
-while(numHashSet.contains(currentNumber +1)){
-    currentNumber = currentNumber + 1;
-    currentCount =  currentCount + 1;
-}
-
-maxCount = Math.max(maxCount, currentCount);
+                int currentCount = 1;
+                while (numHashSet.contains(currentNumber + 1)) {
+                    currentNumber = currentNumber + 1;
+                    currentCount = currentCount + 1;
+                }
+                maxCount = Math.max(maxCount, currentCount);
             }
         }
-return maxCount;
+        return maxCount;
     }
 }
